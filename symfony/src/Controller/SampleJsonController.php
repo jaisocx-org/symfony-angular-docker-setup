@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class SampleJsonController extends AbstractController
 {
-    #[Route('/json/', name: 'app_sample_json')]
+    #[Route('/json/exampleData1/', name: 'app_sample_json')]
     public function index(): JsonResponse
     {
         $data = [
@@ -22,7 +22,7 @@ class SampleJsonController extends AbstractController
         return $response;
     }
 
-    #[Route('/sampleData/', name: 'app_sample_data_table')]
+    #[Route('/json/exampleData2/', name: 'app_sample_data_table')]
     public function sampleData(
         EntityManagerInterface $entityManager
     ): JsonResponse

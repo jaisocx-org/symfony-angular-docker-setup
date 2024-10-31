@@ -31,6 +31,11 @@
                            art="file"
                            url="/api/${any}"
                            path="/var/www/symfony/public/index.php"
+                           cache="update" />
+                    <alias comment="The Symfony framework endpoints, delivering JSON exampleData, secured with JWT"
+                           art="file"
+                           url="/api/json/${any}"
+                           path="/var/www/symfony/public/index.php"
                            authorization="jwt"
                            jwt="jwt-config-1"
                            cache="update" />

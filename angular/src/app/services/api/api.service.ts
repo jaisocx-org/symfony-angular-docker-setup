@@ -11,7 +11,7 @@ import { AuthInterceptorService } from '../auth-interceptor/auth-interceptor.ser
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = environment.backendHost + '/api'; // Sample API endpoint
+  private apiUrl = environment.backendHost + '/api/json/'; // Sample API endpoint
   private http: HttpClient;
 
   constructor(
@@ -28,7 +28,7 @@ export class ApiService {
   }
 
   getTestData(): Observable<any> {
-    const url: string = '/json/';
+    const url: string = 'exampleData1/';
 
     return this.http.get<any>(this.apiUrl + url).pipe(
       retry(2),
@@ -37,7 +37,7 @@ export class ApiService {
   }
 
   getSampleData(): Observable<any> {
-    const url: string = '/sampleData/';
+    const url: string = 'exampleData2/';
 
     return this.http.get<any>(this.apiUrl + url).pipe(
       retry(2),
