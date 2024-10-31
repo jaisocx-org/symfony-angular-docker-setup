@@ -9,7 +9,7 @@
 3. docker-compose up -d
 4. enter php docker container:
 ```
-docker-compose exec php /bin/bash
+docker-compose exec php /usr/bin/env bash
 ```
 
 then, inside php docker container terminal:
