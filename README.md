@@ -1,5 +1,8 @@
 # Symfony and Angular, published with Jaisocx webserver docker image
 
+![Symfony and Angular, published with Jaisocx webserver docker image](./Screenshot_2024-10-31_at_23.38.16.png)
+
+
 ## Setup 
 1. git clone git@github.com:jaisocx-org/symfony-angular-docker-setup.git
 2. docker-compose build
