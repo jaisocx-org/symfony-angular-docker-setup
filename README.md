@@ -5,11 +5,11 @@
 
 ## Setup 
 1. git clone git@github.com:jaisocx-org/symfony-angular-docker-setup.git
-2. docker-compose build
-3. docker-compose up -d
+2. docker compose build
+3. docker compose up -d
 4. enter php docker container:
 ```
-docker-compose exec php /usr/bin/env bash
+docker compose exec php /usr/bin/env bash
 ```
 
 then, inside php docker container terminal:
@@ -51,7 +51,7 @@ or Jaisocx JWT feature. https://jaisocx.com/docs#auth-jwt-anchor
 ### Angular
 2. to develop with Angular, You need to start the file watcher
 ```
-docker compose exec php /bin/bash
+docker compose exec php /usr/bin/env bash
 cd /var/www/angular
 npm run watch
 ```
@@ -63,7 +63,7 @@ or like this, even easy
 
 3. to access ng cli or npm
 ```
-docker compose exec php /bin/bash
+docker compose exec php /usr/bin/env bash
 cd /var/www/angular
 ng -v
 npm -v
@@ -104,7 +104,7 @@ the entire mysql database datafiles folder can be reset after new mysql docker c
 I'd recommend to use a standalone non-dockerized database instance, 
 or to run database backups regularly, 
 and obligatory, before any changes on docker-compose.yml file, 
-or before executing docker-compose down --volumes.
+or before executing docker compose down --volumes.
 
 
 
