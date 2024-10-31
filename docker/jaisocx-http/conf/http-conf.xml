@@ -1,0 +1,63 @@
+<conf>
+    <conf-idm path="/usr/lib/jaisocx-http/apps/congratulations/conf/idm-conf.xml" />
+    <conf-jwt>
+        <jwt
+            id="jwt-config-1" 
+        />
+    </conf-jwt>
+    <conf-http>
+        <servers>
+            <server port="443" alternative-port="2288" secure="true">
+                <domain
+                    name="example-symfony-angular-dockerized.brightday.email"
+                    jks-path="/usr/lib/jaisocx-http/ssl/brightday.email.jks"
+                    jks-alias="brightday.email"
+                    jks-passphrase="JW5MYPKHbdqetvr4yfshiFwwjvr4fakE43qJUtgh7A2hNEW"
+                    document-root="/var/www/symfony/public"
+                    publish-charset="UTF-8" src-charset="UTF-8">
+                    <alias
+                        art="jwt-login"
+                        url="/api_jwt_login"
+                        jwt="jwt-config-1"
+                    />
+                    <alias comment="The Symfony framework public folder with static resources like images, styles and scripts and index.php file"
+                           art="folder"
+                           url="/api/"
+                           path="/var/www/symfony/public/"
+                           cache="update"
+                           list="true"
+                           each-folder-content-file-name="index.php" />
+                    <alias comment="The Symfony framework entrance .php file, each request is leading to public/index.php"
+                           art="file"
+                           url="/api/${any}"
+                           path="/var/www/symfony/public/index.php"
+                           authorization="jwt"
+                           jwt="jwt-config-1"
+                           cache="update" />
+                    <alias comment="home page, where angular build is serving"
+                           art="folder"
+                           url="/"
+                           path="/var/www/angular/dist/angular/browser/"
+                           cache="update"
+                           list="true"
+                           each-folder-content-file-name="index.html" />
+                    <alias art="file"
+                           url="/${any}"
+                           path="/var/www/angular/dist/angular/browser/index.html"
+                           cache="update"
+                           list="true"
+                           each-folder-content-file-name="index.html" />
+                </domain>
+            </server>
+            <server port="80" alternative-port="2289" secure="false">
+                <domain
+                    name="example-symfony-angular-dockerized.brightday.email">
+                    <alias comment="on the plain port 80 without TLS, this alias will redirect all requests to normal https:// url, defined above in server node port 443, secure=true"
+                           art="redirection"
+                           url="/${any}"
+                           path="https://example-symfony-angular-dockerized.brightday.email/" />
+                </domain>
+            </server>
+        </servers>
+    </conf-http>
+</conf>

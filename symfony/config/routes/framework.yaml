@@ -1,0 +1,4 @@
+when@dev:
+    _errors:
+        resource: '@FrameworkBundle/Resources/config/routing/errors.xml'
+        prefix: '%symfony_base_url%/_error'

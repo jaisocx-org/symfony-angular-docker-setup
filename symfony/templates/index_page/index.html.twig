@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexPageController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+    .image-holder {
+        display: block;
+        height: 200px;
+        width: auto;
+    }
+    .image-holder img {
+        max-height: 100%;
+        max-width: 100%;
+        height: auto;
+        width: auto;
+    }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello from {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your Symfony class at <code>/var/www/symfony/src/Controller/IndexPageController.php</code></li>
+        <li>Your template at <code>/var/www/symfony/templates/index_page/index.html.twig</code></li>
+    </ul>
+    <span class="image-holder">
+        <img src="{{ absolute_url(path('app_index_page')) }}images/nature.jpg" />
+    </span>
+    
+</div>
+{% endblock %}
+
