@@ -4,9 +4,20 @@
 
 
 ## Setup 
+First, You need to stop services, listening on TCP ports 443 and 80,
+or, You have to set different ports in http-conf.xml for Jaisocx server endpoints
+or in the docker-compose.yml for jaisocx_http service.
+
 1. git clone git@github.com:jaisocx-org/symfony-angular-docker-setup.git
 2. docker compose build
 3. docker compose up -d
+
+If the Jaisocx_http docker container does not build or start,
+in the Dockerfile maybe the CPU architecture does not suit.
+```
+in the file: docker/jaisocx-http/Dockerfile
+FROM jaisocx/webserver:amd64.latest # amd64 CPU Architecture, when not working, I have one more docker build, with arm64/v8
+```
 4. enter php docker container:
 ```
 docker compose exec php /usr/bin/env bash
