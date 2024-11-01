@@ -15,13 +15,21 @@ docker compose exec php /usr/bin/env bash
 then, inside php docker container terminal:
 ```
 4.1. cd /var/www/symfony
-4.2. composer install
-4.3. php bin/console doctrine:migrations:migrate
-4.4. php bin/console doctrine:fixtures:load
 
-4.5. cd /var/www/angular
-4.6. npm install
-4.7. npm run build
+new catalogs, these are in .gitignore and were not cloned from this git repo:
+4.2. mkdir -p var/cache/dev
+4.3. mkdir -p var/log
+
+enable access to cache and log catalogs:
+4.4. chmod -R a+rwx var
+
+4.5. composer install
+4.6. php bin/console doctrine:migrations:migrate
+4.7. php bin/console doctrine:fixtures:load
+
+4.8. cd /var/www/angular
+4.9. npm install
+4.10. npm run build
 ```
 
 5. To access this local endpoint, You need to add this line to Your /etc/hosts file:
@@ -38,8 +46,8 @@ example-symfony-angular-dockerized.brightday.email
 
 
 6. angular start page: https://example-symfony-angular-dockerized.brightday.email/
-7. symfony start page: https://example-symfony-angular-dockerized.brightday.email/api/
-8. symfony sample API JSON URL: https://example-symfony-angular-dockerized.brightday.email/api/json/
+7. symfony start page: https://example-symfony-angular-dockerized.brightday.email/symfony/
+8. symfony sample API JSON URL: https://example-symfony-angular-dockerized.brightday.email/symfony/json/
 9. That's all
 
 ## Development
@@ -118,15 +126,23 @@ or before executing docker compose down --volumes.
 
 
 ## Symfony URL prefix
-Symfony setup files modified by me in this project, so that the symfony serves under URL prefix /api.
+Symfony setup files modified by me in this project, so that the symfony serves under URL prefix /symfony/.
 
 ### Symfony
-to change URL prefix /api to another, You need just to change this in the .env file.
+to change URL prefix /symfony/ to another, You need to change this in the .env file,
+and in the angular API calls methods, too.
+
+In the Jaisocx web server's config .xml file, too, for sure
+this is &lt;alias url="/symfony/" and others.
+
+In the Jaisocx idm-conf.xml for sure all &lt;granted-alias url="...
 
 If the project was already in development, then restart docker, and execute:
 ```
-docker compose exec php bin/bash
+docker compose exec php /usr/bin/env bash
+cd /var/www/symfony
 php bin/console cache:clear 
+php bin/console asset-map:compile
 ```
 
 If You upgrade symfony core files in this dockerized setup, You need to adjust these configuration files too.

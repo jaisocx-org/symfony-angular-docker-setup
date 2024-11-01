@@ -11,7 +11,7 @@ import { AuthInterceptorService } from '../auth-interceptor/auth-interceptor.ser
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = environment.backendHost + '/api/json/'; // Sample API endpoint
+  private apiUrl = environment.backendHost + '/symfony/json/'; // Sample API endpoint
   private http: HttpClient;
 
   constructor(

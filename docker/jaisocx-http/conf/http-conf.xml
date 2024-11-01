@@ -22,19 +22,19 @@
                     />
                     <alias comment="The Symfony framework public folder with static resources like images, styles and scripts and index.php file"
                            art="folder"
-                           url="/api/"
+                           url="/symfony/"
                            path="/var/www/symfony/public/"
                            cache="update"
                            list="true"
                            each-folder-content-file-name="index.php" />
                     <alias comment="The Symfony framework entrance .php file, each request is leading to public/index.php"
                            art="file"
-                           url="/api/${any}"
+                           url="/symfony/${any}"
                            path="/var/www/symfony/public/index.php"
                            cache="update" />
                     <alias comment="The Symfony framework endpoints, delivering JSON exampleData, secured with JWT"
                            art="file"
-                           url="/api/json/${any}"
+                           url="/symfony/json/${any}"
                            path="/var/www/symfony/public/index.php"
                            authorization="jwt"
                            jwt="jwt-config-1"
