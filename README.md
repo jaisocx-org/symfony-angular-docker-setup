@@ -1,6 +1,6 @@
 # Symfony and Angular, DB MySQL, published with Jaisocx webserver docker image
 
-![Symfony and Angular, published with Jaisocx webserver docker image](./Screenshot_2024-10-31_at_23.38.16.png)
+![Symfony and Angular, published with Jaisocx webserver docker image](./Screenshot_2024-11-01_at_02.03.19.png)
 
 
 ## Setup 
