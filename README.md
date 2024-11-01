@@ -147,7 +147,7 @@ php bin/console asset-map:compile
 
 If You upgrade symfony core files in this dockerized setup, You need to adjust these configuration files too.
 ```
-{PROJECT_ROOT}/.env: SYMFONY_BASE_URL set to /api, also for this setting the other symfony config files were modified:
+{PROJECT_ROOT}/.env: SYMFONY_BASE_URL set to /symfony, also for this setting the other symfony config files were modified:
 {PROJECT_ROOT}/symfony/config/packages/asset_mapper.yaml: public_prefix parameter modified, symfony_base_url prepended.
 {PROJECT_ROOT}/symfony/config/routes.yaml: prefix symfony_base_url appended.
 {PROJECT_ROOT}/symfony/config/routes/framework.yaml: prefix parameter modified, symfony_base_url prepended.
