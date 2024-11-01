@@ -58,7 +58,10 @@ example-symfony-angular-dockerized.brightday.email
 
 6. angular start page: https://example-symfony-angular-dockerized.brightday.email/
 7. symfony start page: https://example-symfony-angular-dockerized.brightday.email/symfony/
-8. symfony sample API JSON URL: https://example-symfony-angular-dockerized.brightday.email/symfony/json/
+8. symfony sample API JSON URL is protected with JWT token in this setup.
+The response status will be 401 Unauthorized
+https://example-symfony-angular-dockerized.brightday.email/symfony/json/exampleData1/
+However, this URL will be accessible by Angular, serving under Jaisocx http in this setup.
 9. That's all
 
 ## Development
