@@ -1,6 +1,6 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placepre * * * * * * * * * * -->
 <!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
@@ -234,23 +234,28 @@
         <span style="box-sizing: border-box; display: inline-block; line-height: 2.1rem; margin: 0 0.8rem;"> {{ apiJson?.message }}</span>
       </p>
 
-      <div *ngIf="apiJson2 && apiJson2.length" style="padding: 0; margin: 1rem 0 0 0; font-size: 0.8rem;">
-        <strong>Sample MySQL Table data output via Symfony API call</strong>
-        <div style="margin: 0.4rem 0;">
-          <strong>Symfony PHP Backend Root URL:</strong>
-          <a target="blank_" href="https://example-symfony-angular-dockerized.brightday.email/symfony/">https://example-symfony-angular-dockerized.brightday.email/symfony/</a>
-        </div>
-        <ul style="margin: 0.4rem 0; padding: 0; list-style: none;">
-          <li *ngFor="let data of apiJson2" style="margin: 0; padding: 0;">
+      <p style="margin: 1rem 0 0 0; font-size: 0.8rem; font-weight: 800;">
+      Symfony PHP Backend Root URL
+      </p>
+      <p style="box-sizing: border-box; display: inline-block; border-radius: 2.75rem; margin: 0.5rem 0 0 0; font-size: 0.875rem; font-weight: normal; background-color: #fff7f7; color: #ff1166;">
+        <span style="box-sizing: border-box; display: inline-block; line-height: 1.2rem; margin: 0 0.8rem;"> 
+          <a style="color: inherit; background-color: inherit; font-size: 0.6rem; line-height: inherit;" target="blank_" href="https://example-symfony-angular-dockerized.brightday.email/symfony/">https://example-symfony-angular-dockerized.brightday.email/symfony/</a>
+        </span>
+      </p>
+
+      <pre *ngIf="apiJson2 && apiJson2.length" class="sample_symfony_doctrine_api">
+        <strong>DB Table JSON via Symfony</strong>
+        <ul>
+          <li *ngFor="let data of apiJson2">
             {{ data.id }} {{ data.text }}
           </li>
         </ul>
 
-        <div><strong>Symony Entity:</strong>symfony/src/Entity/SampleData.php</div>
-        <div><strong>Symony Fixtures:</strong>symfony/src/DataFixtures/SampleDataFixtures.php</div>
-        <div><strong>Symony Controller:</strong>symfony/src/Controller/SampleJsonController.php</div>
-        <div><strong>Angular Api method:</strong>angular/src/app/services/api.service.ts getSampleData()</div>
-      </div>
+        <pre><strong>Symony Entity:</strong>symfony/src/Entity/SampleData.php</pre>
+        <pre><strong>Symony Fixtures:</strong>symfony/src/DataFixtures/SampleDataFixtures.php</pre>
+        <pre><strong>Symony Controller:</strong>symfony/src/Controller/SampleJsonController.php</pre>
+        <pre><strong>Angular Api method:</strong>angular/src/app/services/api/api.service.ts getSampleData()</pre>
+      </pre>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
@@ -350,10 +355,10 @@
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placepre * * * * * * * * * * * -->
 <!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placepre  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 

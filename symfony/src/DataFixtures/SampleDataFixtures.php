@@ -17,7 +17,7 @@ class SampleDataFixtures extends Fixture
         // Generate 10 data records
         for ($i = 0; $i < 10; $i++) {
             $data = new SampleData();
-            $data->setText($faker->url);
+            $data->setText($faker->word);
 
             $manager->persist($data);
         }
