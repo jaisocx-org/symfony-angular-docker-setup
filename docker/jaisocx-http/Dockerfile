@@ -2,7 +2,7 @@
 FROM jaisocx/webserver:amd64.latest 
 
 # arm64/v8 CPU Architecture
-# FROM jaisocx/webserver:mac.3.0.14
+#FROM jaisocx/webserver:mac.3.0.16
 
 WORKDIR /usr/lib/jaisocx-http
 

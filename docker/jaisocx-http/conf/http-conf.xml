@@ -20,6 +20,16 @@
                         url="/api_jwt_login"
                         jwt="jwt-config-1"
                     />
+                    <alias comment="the cached json endpoint"
+                           art="file"
+                           url="/symfony/json/exampleData1/"
+                           path="/var/www/symfony/public/index.php"
+                           cache="first-call" />
+                    <alias comment="the cached json endpoint"
+                           art="file"
+                           url="/symfony/json/exampleData2/"
+                           path="/var/www/symfony/public/index.php"
+                           cache="first-call" />
                     <alias comment="The Symfony framework public folder with static resources like images, styles and scripts and index.php file"
                            art="folder"
                            url="/symfony/"
